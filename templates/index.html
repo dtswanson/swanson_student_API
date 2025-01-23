@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <a href="add.html" class="btn btn-primary mb-3">Add New Student</a>
+        <h1 class="text-center text-primary">Student API Documentation</h1>
+        <h2 class="text-success mt-4">Endpoints</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="font-weight-bold text-danger">GET /students</span>
+                <div class="text-muted">Retrieve all students.</div>
+            </li>
+            <li class="list-group-item">
+                <span class="font-weight-bold text-danger">GET /students/&lt;id&gt;</span>
+                <div class="text-muted">Retrieve a student by ID. Replace &lt;id&gt; with the student's ID.</div>
+            </li>
+            <li class="list-group-item">
+                <span class="font-weight-bold text-danger">GET /students/random</span>
+                <div class="text-muted">Retrieve a random student.</div>
+            </li>
+            <li class="list-group-item">
+                <span class="font-weight-bold text-danger">POST /students</span>
+                <div class="text-muted">Create a new student. Send a JSON object with the student's name.</div>
+            </li>
+            <li class="list-group-item">
+                <span class="font-weight-bold text-danger">PUT /students/&lt;id&gt;</span>
+                <div class="text-muted">Update a student by ID. Replace &lt;id&gt; with the student's ID and send a JSON object with the updated name.</div>
+            </li>
+            <li class="list-group-item">
+                <span class="font-weight-bold text-danger">DELETE /students/&lt;id&gt;</span>
+                <div class="text-muted">Delete a student by ID. Replace &lt;id&gt; with the student's ID.</div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
