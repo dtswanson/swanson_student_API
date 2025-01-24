@@ -23,24 +23,29 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://misdswanson.eu.pythonanywhere.com/students')
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.getElementById('students-table-body');
-                    data.forEach(student => {
-                        const row = document.createElement('tr');
-                        const idCell = document.createElement('td');
-                        idCell.textContent = student.id;
-                        const nameCell = document.createElement('td');
-                        nameCell.textContent = student.name;
-                        row.appendChild(idCell);
-                        row.appendChild(nameCell);
-                        tableBody.appendChild(row);
-                    });
-                })
-                .catch(error => console.error('Error fetching students:', error));
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('https://misdswanson.eu.pythonanywhere.com/students')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const tableBody = document.getElementById('students-table-body');
+                data.forEach(student => {
+                    const row = document.createElement('tr');
+                    const idCell = document.createElement('td');
+                    idCell.textContent = student.id;
+                    const nameCell = document.createElement('td');
+                    nameCell.textContent = student.name;
+                    row.appendChild(idCell);
+                    row.appendChild(nameCell);
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching students:', error));
+    });
+</script>
 </body>
 </html>
