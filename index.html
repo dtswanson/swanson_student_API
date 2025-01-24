@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-primary">Students List</h1>
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="students-table-body">
+                <!-- Table rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://misdswanson.eu.pythonanywhere.com/students')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('students-table-body');
+                    data.forEach(student => {
+                        const row = document.createElement('tr');
+                        const idCell = document.createElement('td');
+                        idCell.textContent = student.id;
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = student.name;
+                        row.appendChild(idCell);
+                        row.appendChild(nameCell);
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching students:', error));
+        });
+    </script>
+</body>
+</html>
