@@ -11,9 +11,9 @@ students = [
     { 'id': 4, 'name': 'Atsushi' },
     { 'id': 5, 'name': 'Shubham' },
     { 'id': 6, 'name': 'Nicolas' },
-    { 'id': 7, 'name': 'Damien' },
-    { 'id': 8, 'name': 'Dain' },
-    { 'id': 9, 'name': 'Alex' },
+    { 'id': 7, 'name': 'Louie the Dog' },
+    { 'id': 8, 'name': 'Sandy the Cat' },
+    { 'id': 9, 'name': 'Buster the Cat' },
     { 'id': 10, 'name': 'Adam' },
     { 'id': 11, 'name': 'Alex C' }
 ]
